@@ -1,0 +1,366 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #8D99AE 0%, #EDF2F4 100%);
+    color: #2B2D42;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #2B2D42, #8D99AE);
+    color: #ffffff;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+header .highlight {
+    background-color: #FFD700;
+    color: #2B2D42;
+    padding: 0.3em 0.6em;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2B2D42;
+    border-bottom: 2px solid #8D99AE;
+    padding-bottom: 0.3em;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    column-gap: 1em; /* 左右間距 */
+    row-gap: 0.2em; /* 上下間距 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5em 0; /* 減少整體上下間距 */
+}
+
+.game-list li {
+    margin: 0.5em 0; /* 遊戲卡片之間的垂直間距減少 */
+}
+
+.game-list a {
+    text-decoration: none;
+    color: #2B2D42;
+    font-weight: bold;
+    display: block;
+    padding: 0.8em; /* 遊戲卡片內部的上下內邊距 */
+    border-radius: 8px;
+    background-color: #F8F9FA;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-list a:hover {
+    background-color: #8D99AE;
+    color: #EDF2F4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    margin-bottom: 2em;
+    background-color: #FFFFFF;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.game-ratings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.game-rating {
+    font-weight: bold;
+    color: #2B2D42;
+}
+
+footer {
+    background: #2B2D42;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.recommended-star {
+    color: #FFD700;
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5em;
+    gap: 15px;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, #6C757D, #495057);
+    border: none;
+    color: #EDF2F4;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover {
+    background: linear-gradient(135deg, #495057, #6C757D);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-size: cover;
+    margin: 5px;
+    animation: roll 0.5s ease;
+}
+
+.icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-size: cover;
+}
+
+.dice-icon {
+    background-image: url('images/dice.png'); /* 替換為骰子圖標的路徑 */
+}
+
+.card-icon {
+    background-image: url('images/card.png'); /* 替換為撲克牌圖標的路徑 */
+}
+
+.no-prop-icon {
+    background-image: url('images/no-prop.png'); /* 替換為無道具圖標的路徑 */
+}
+
+#dice-roller {
+    display: none; /* 初始隱藏 */
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dice-roller h2 {
+    margin-bottom: 10px;
+}
+
+#dice-roller label {
+    margin-right: 10px;
+}
+
+#dice-roller input {
+    width: 50px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+
+#dice-results {
+    margin-top: 10px;
+}
+
+/* Hero Section 背景設置 */
+.hero-section {
+    height: 10vh; /* 占據 60% 的視窗高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('images/party-background.jpg') no-repeat center center/cover; /* 使用背景圖片 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Section 的半透明遮罩 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 半透明遮罩 */
+    z-index: 1;
+}
+
+/* 內容容器 */
+.hero-content {
+    position: relative;
+    z-index: 2; /* 確保文字在遮罩之上 */
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* 主標題樣式 */
+.hero-title {
+    color: #FFD700; /* 金黃色，代表快樂與派對感 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 增加陰影讓文字更突出 */
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px;
+    animation: bounceIn 1s ease-out;
+}
+
+/* 副標題樣式 */
+.hero-subtitle {
+    color: #F5F5F5; /* 柔和的白灰色，易於閱讀 */
+    opacity: 0.9;   /* 增加一些透明度，讓視覺更輕盈 */
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: 10px;
+    animation: bounceIn 1s ease-out;
+}
+
+.hero-categories {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.category span {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+
+
+/* 動態效果 */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes roll {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .filter-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .game-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .game-list a {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .game-ratings {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}

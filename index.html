@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>超過50種好玩的「喝酒遊戲」推薦清單!骰子、撲克牌、無須任何道具都可以快速買醉! 全網最齊全</title>
+        <meta name="keywords" content="喝酒遊戲, 派對喝酒遊戲, 骰子喝酒遊戲, 撲克牌喝酒遊戲, 不用道具喝酒遊戲, 快速喝酒">
+        <meta name="description" content="超過 50 種最受歡迎的喝酒遊戲，包括骰子遊戲、撲克牌遊戲及最快買醉的遊戲，適合任何派對場合！">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="beer.png" type="image/x-icon">
+    </head>
+</head>
+<body>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">🍻最強派對喝酒遊戲🍻</h1>
+            <p class="hero-subtitle">超過 50 種簡單又好玩的遊戲，沒有任何道具也能玩！</p>
+        </div>
+    </header>
+    <main>
+        <div id="filter-buttons" class="filter-buttons">
+            <button class="filter-btn" onclick="filterGames('all')">所有遊戲</button>
+            <button class="filter-btn" onclick="filterGames('quick-drinking')">快速喝酒</button>
+            <button class="filter-btn" onclick="filterGames('high-interaction')">高參與度</button>
+            <button class="filter-btn" onclick="filterGames('dice-roller')">骰子模擬器</button> <!-- 新增按鈕 -->
+        </div>
+        
+        <div id="dice-roller">
+            <h2>骰子模擬器</h2>
+            <label for="dice-count">選擇骰子數量：</label>
+            <input type="number" id="dice-count" value="1" min="1" max="10">
+            <button id="roll-dice" class="filter-btn">丟骰子</button>
+            <div id="dice-results"></div>
+        </div>
+        <section id="dice-games-section">
+            <h2>
+                <span class="icon dice-icon"></span> 骰子遊戲
+            </h2>
+            <ul id="dice-games" class="game-list"></ul>
+        </section>
+        
+        <section id="card-games-section">
+            <h2>
+                <span class="icon card-icon"></span> 撲克牌遊戲
+            </h2>
+            <ul id="card-games" class="game-list"></ul>
+        </section>
+        
+        <section id="no-prop-games-section">
+            <h2>
+                <span class="icon no-prop-icon"></span> 不用道具遊戲
+            </h2>
+            <ul id="no-prop-games" class="game-list"></ul>
+        </section>
+        <section id="game-details"></section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>聯絡我們</h4>
+                <p>Email: jacky88927@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 最強派對喝酒遊戲網頁. 保留所有權利。</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
